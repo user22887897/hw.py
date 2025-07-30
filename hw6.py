@@ -45,32 +45,61 @@
 
 # 3 задание
 
-class SearchEngine:
-    def __init__(self, arr):
-        self.arr = arr
+# class SearchEngine:
+#     def __init__(self, arr):
+#         self.arr = arr
 
-    def linear_search(self, target):
+#     def linear_search(self, target):
         
-        for i in range(len(self.arr)):
-            if self.arr[i] == target:
-                return i
-        return -1 
+#         for i in range(len(self.arr)):
+#             if self.arr[i] == target:
+#                 return i
+#         return -1 
 
-    def binary_search(self, target):
+#     def binary_search(self, target):
 
-        left, right = 0, len(self.arr) - 1
-        while left <= right:
-            mid = (left + right) // 2
-            if self.arr[mid] == target:
-                return mid
-            elif self.arr[mid] < target:
-                left = mid + 1
-            else:
-                right = mid - 1
-        return -1 
+#         left, right = 0, len(self.arr) - 1
+#         while left <= right:
+#             mid = (left + right) // 2
+#             if self.arr[mid] == target:
+#                 return mid
+#             elif self.arr[mid] < target:
+#                 left = mid + 1
+#             else:
+#                 right = mid - 1
+#         return -1 
 
-se = SearchEngine([1, 2, 3, 4, 5])
-res1 = se.linear_search(3)
-print(f"Результат линейного поиска: {res1}")
-res2 = se.binary_search(4)
-print(f"Результат бинарного поиска: {res2}")
+# se = SearchEngine([1, 2, 3, 4, 5])
+# res1 = se.linear_search(3)
+# print(f"Результат линейного поиска: {res1}")
+# res2 = se.binary_search(4)
+# print(f"Результат бинарного поиска: {res2}")
+
+class Stack:
+    def __init__(self):
+        self.items = []
+
+    def push(self, item):
+        
+        self.items.append(item)
+
+    def pop(self):
+       
+        if not self.is_empty():
+            return self.items.pop()
+        else:
+            return None 
+
+    def is_empty(self):
+
+        return len(self.items) == 0
+
+stack = Stack()
+print(f"Стек пуст? {stack.is_empty()}") # Ожидаемый вывод: True
+stack.push(10)
+stack.push(20)
+print(f"Элемент извлечен: {stack.pop()}") 
+print(f"Стек пуст? {stack.is_empty()}")
+print(f"Элемент извлечен: {stack.pop()}") 
+print(f"Стек пуст? {stack.is_empty()}")
+print(f"Попытка извлечь из пустого стека: {stack.pop()}")
