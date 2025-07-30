@@ -95,7 +95,7 @@ class Stack:
         return len(self.items) == 0
 
 stack = Stack()
-print(f"Стек пуст? {stack.is_empty()}") # Ожидаемый вывод: True
+print(f"Стек пуст? {stack.is_empty()}") 
 stack.push(10)
 stack.push(20)
 print(f"Элемент извлечен: {stack.pop()}") 
