@@ -22,7 +22,7 @@ class Vihicle(ABC):
         return f"{self.brand} {self.model} {self.year}"
     
 class Car(Vihicle):
-    def init(self, brand: str, model: str, year: int, seats: int):
+    def __init__(self, brand: str, model: str, year: int, seats: int):
         super().init(brand, model, year)
         self.seats = seats
     
@@ -30,7 +30,7 @@ class Car(Vihicle):
         return f"Car: {self.full_name}, Seats: {self.seats}"
 
 class Motorcycle(Vihicle):
-    def init(self, brand: str, model: str, year: int, has_sidecar: bool):
+    def __init__(self, brand: str, model: str, year: int, has_sidecar: bool):
         super().init(brand, model, year)
         self.has_sidecar = has_sidecar
     
