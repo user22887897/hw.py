@@ -2,7 +2,7 @@ import sqlite3
 from vehicle import Vehicle, Car, Motorcycle
 
 class FleetManager:
-    def init(self):
+    def __init__(self):
         self.conn = sqlite3.connect('fleet.db')
         self.cursor = self.conn.cursor()
     
